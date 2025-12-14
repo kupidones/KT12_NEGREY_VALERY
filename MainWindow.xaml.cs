@@ -1,17 +1,8 @@
-using System.Windows;
-namespace WpfNavigationDemo
+private void btnOpenSecond_Click(object sender, RoutedEventArgs e)
 {
-    public partial class MainWindow : Window
-    {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
-        private void btnOpenSecond_Click(object sender, RoutedEventArgs e)
-        {
-            var secondWindow = new SecondWindow();
-            secondWindow.Owner = this;
-            secondWindow.Show();
-        }
-    }
+    var secondWindow = new SecondWindow();
+    secondWindow.Owner = this;
+    secondWindow.ShowDialog();
+    var userName = secondWindow.UserName;
+    MessageBox.Show($"Данные из второго окна: {userName}");
 }
