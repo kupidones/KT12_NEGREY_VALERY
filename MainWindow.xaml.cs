@@ -1,8 +1,7 @@
-private void btnOpenSecond_Click(object sender, RoutedEventArgs e)
+private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
 {
-    var secondWindow = new SecondWindow();
-    secondWindow.Owner = this;
-    secondWindow.ShowDialog();
-    var userName = secondWindow.UserName;
-    MessageBox.Show($"Данные из второго окна: {userName}");
+    var result = MessageBox.Show("Вы уверены, что хотите выйти?",
+                                 "Подтверждение",
+                                 MessageBoxButton.YesNo);
+    e.Cancel = (result == MessageBoxResult.No);
 }
