@@ -1,0 +1,24 @@
+<Window x:Class="WpfNavigationDemo.SecondWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Второе окно" Height="250" Width="400"
+        WindowStartupLocation="CenterOwner">
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock x:Name="txtMessage" Text="Вы во втором окне!"
+                       FontSize="20"
+                       Margin="0,0,0,20"
+                       TextAlignment="Center"/>
+            <Button Content="Закрыть"
+                    Width="120"
+                    Height="40"
+                    FontSize="14"
+                    Click="CloseButton_Click"/>
+            <Button Content="Вернуться"
+                    Width="120"
+                    Height="40"
+                    FontSize="14"
+                    Click="ReturnButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
