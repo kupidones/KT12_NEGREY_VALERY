@@ -1,7 +1,21 @@
-public string UserName { get; set; }
-
-private void ReturnButton_Click(object sender, RoutedEventArgs e)
+using System.Windows;
+namespace WpfNavigationDemo
 {
-    UserName = "Пользователь";
-    this.Close();
+    public partial class SecondWindow : Window
+    {
+        public string UserName { get; set; }
+        public SecondWindow()
+        {
+            InitializeComponent();
+        }
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+        private void ReturnButton_Click(object sender, RoutedEventArgs e)
+        {
+            UserName = "Пользователь";
+            this.Close();
+        }
+    }
 }
