@@ -1,7 +1,19 @@
-private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+using System.Windows;
+namespace WpfNavigationDemo
 {
-    var result = MessageBox.Show("Вы уверены, что хотите выйти?",
-                                 "Подтверждение",
-                                 MessageBoxButton.YesNo);
-    e.Cancel = (result == MessageBoxResult.No);
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+        private void btnOpenSecond_Click(object sender, RoutedEventArgs e)
+        {
+            var secondWindow = new SecondWindow();
+            secondWindow.Owner = this;
+            secondWindow.ShowDialog();
+            var userName = secondWindow.UserName;
+            MessageBox.Show($"Данные из второго окна: {userName}");
+        }
+    }
 }
